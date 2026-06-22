@@ -16,3 +16,4 @@ ta
 feedparser
 requests
 beautifulsoup4
+praw
