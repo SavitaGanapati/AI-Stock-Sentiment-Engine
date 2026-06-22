@@ -1,0 +1,15 @@
+pandas
+numpy
+yfinance
+beautifulsoup4
+scrapy
+selenium
+transformers
+torch
+nltk
+vaderSentiment
+sqlalchemy
+streamlit
+plotly
+scikit-learn
+ta
