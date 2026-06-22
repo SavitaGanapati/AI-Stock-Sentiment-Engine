@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Database files
+*.db
+*.sqlite
+
+# Data files
+data/raw/
+data/processed/
+
+# Model files
+*.pt
+*.pth
+*.bin
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
