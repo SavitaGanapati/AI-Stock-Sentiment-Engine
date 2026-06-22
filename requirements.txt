@@ -13,3 +13,4 @@ streamlit
 plotly
 scikit-learn
 ta
+feedparser
