@@ -37,3 +37,6 @@ if __name__ == "__main__":
     create_article_table()
 
     print("Articles table created successfully!")
+
+
+    
