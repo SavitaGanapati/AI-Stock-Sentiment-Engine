@@ -2,7 +2,10 @@
 News Pipeline
 Coordinates the end-to-end sentiment workflow.
 """
-
+from database.article_store import (
+    insert_article
+)
+from datetime import datetime
 from scrapers.moneycontrol_scraper import (
     get_moneycontrol_headlines
 )
@@ -30,7 +33,19 @@ def run_pipeline():
     print(
         f"Number of news items: {len(news)}"
     )
+    for headline in news:
 
+        insert_article(
+            timestamp=datetime.now().isoformat(),
+            source="Moneycontrol",
+            headline=headline,
+            article_text=headline,
+            ticker=""
+    )
+
+    print(
+    f"Stored {len(news)} Moneycontrol headlines."
+)
     print("\nCollecting Twitter posts...")
     tickers = [
     "RELIANCE.NS",
