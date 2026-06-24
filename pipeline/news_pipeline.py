@@ -3,22 +3,57 @@ News Pipeline
 Coordinates the end-to-end sentiment workflow.
 """
 
+from scrapers.moneycontrol_scraper import (
+    get_moneycontrol_headlines
+)
 
+from scrapers.twitter_scraper import (
+    get_twitter_posts
+)
+
+from reports.daily_report import (
+    generate_daily_report
+)
+
+from scrapers.economic_times_scraper import (
+    get_et_headlines
+
+)
 def run_pipeline():
 
     print("\nStarting news pipeline...")
 
-    print("Collecting news...")
+    print("\nCollecting Moneycontrol news...")
 
-    print("Processing text...")
+    news = get_moneycontrol_headlines()
 
-    print("Running sentiment models...")
+    print(
+        f"Number of news items: {len(news)}"
+    )
 
-    print("Computing scores...")
+    print("\nCollecting Twitter posts...")
+    tickers = [
+    "RELIANCE.NS",
+    "TCS.NS",
+    "INFY.NS"
+]   
+    for ticker in tickers:
+        posts = get_twitter_posts(ticker)
+        
+    print(
+        f"Number of posts: {len(posts)}"
+    )
 
-    print("Generating report...")
+    print("\nGenerating report...")
 
-    print("Pipeline completed successfully.")
+    generate_daily_report()
+
+    print("\n Collecting ET headlines")
+    get_et_headlines()
+
+    print(
+        "\nPipeline completed successfully."
+    )
 
 
 if __name__ == "__main__":
